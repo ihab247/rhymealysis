@@ -1,0 +1,18 @@
+.Hub {
+    display: block;
+    float: right;
+    width: 70vw;
+    max-height: 100vh;
+    min-height: 100vh;
+    text-align: left;
+    overflow-y: scroll;
+    background-color: #141818;
+}
+
+.Hub p {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: futura;
+    color: white;
+    margin: 1rem;
+}
