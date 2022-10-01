@@ -16,3 +16,18 @@
     color: white;
     margin: 1rem;
 }
+
+.Hub #word #tooltip {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    padding: 5px;
+    z-index: 1;
+    font-size: large;
+    background-color: #141818;
+}
+
+.Hub #word:hover #tooltip {
+    visibility: visible;
+}

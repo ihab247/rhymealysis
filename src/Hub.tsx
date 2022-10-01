@@ -31,16 +31,18 @@ class Hub extends React.Component<{
       ["oʊ", "#007475"],
       ["aɪ", "#ccee40"],
       ["eɪ", "black"],
-      ["u", "yellow"]
+      ["u", "yellow"],
+      ["ɔ", "black"]
     ]);
 
     let back = new Map<string, string>([
       ["eɪ", "yellow"],
-      ["u", "black"]
+      ["u", "black"],
+      ["ɔ", "orange"]
     ]);
 
     let objWord = new Word(word);
-    console.log(objWord);
+    // console.log(objWord);
     let out: JSX.Element[] = [];
 
     for (let i = 0; i < objWord.english.length; i++) {
@@ -49,10 +51,11 @@ class Hub extends React.Component<{
       out.push(this.renderSyllable(objWord.english[i], c, b));
     }
 
-    return <>
+    return <span id="word">
       {out}
+      <span id="tooltip">{objWord.vowels.join("-")}</span>
       <span> </span>
-    </>
+    </span>
   }
 
   renderSentence(sentence: string): JSX.Element {

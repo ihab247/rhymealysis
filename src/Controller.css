@@ -13,8 +13,9 @@
     background-color: #0e1111;
     padding: 1rem;
     overflow-y: scroll;
-    height: 100vh;
+    height: 97vh;
     width: 27vw;
     color: aliceblue;
     outline: 0;
+    resize: none;
 }
