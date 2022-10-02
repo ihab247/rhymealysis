@@ -1,6 +1,4 @@
-import React from "react";
 import { ipaRaw } from "./data/ipaRaw";
-
 
 const vowels = "iyɨʉɯuɪʏʊeøɘɵɤoe̞ø̞əɤ̞o̞ɛœɜɞʌɔæɐaɶäɑɒɝŋ";
 const engVowels = "aeiou";
@@ -39,7 +37,7 @@ class Word {
   vowels: string[] = [];
 
   constructor(word: string) {
-    let v = vowelMap.get(word);
+    let v = vowelMap.get(word.toLowerCase());
     if (v == undefined) {
       this.english = [word];
       return;
@@ -49,7 +47,7 @@ class Word {
     let out: string = "";
     let lastVowel: boolean = false;
     for (const c of word) {
-      if (!engVowels.includes(c)) {
+      if (!engVowels.includes(c.toLowerCase())) {
         // consonant
         if (lastVowel) {
           lastVowel = false;

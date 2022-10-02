@@ -1,4 +1,27 @@
 body {
   background-color: #282c34;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+
+/* https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #282c34;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

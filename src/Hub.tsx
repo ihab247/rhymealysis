@@ -16,7 +16,20 @@ class Hub extends React.Component<{
     return <span style={{"color": colour, backgroundColor: back}}>{s}</span>
   }
 
+  filter(word: string) {
+    let alphabet: string = "abcdefghijklmnopqrstuvwxyz'-";
+    let out = "";
+    for (const c of word) {
+      if (alphabet.includes(c.toLowerCase())) {
+        out += c;
+      }
+    }
+    return out;
+  }
+
   renderWord(word: string): JSX.Element {
+
+    let fileredWord = this.filter(word);
 
     let colours = new Map<string, string>([
       ["ɪ", "red"],
@@ -32,16 +45,18 @@ class Hub extends React.Component<{
       ["aɪ", "#ccee40"],
       ["eɪ", "black"],
       ["u", "yellow"],
-      ["ɔ", "black"]
+      ["ɔ", "black"],
+      ["ʊ", "pink"]
     ]);
 
     let back = new Map<string, string>([
       ["eɪ", "yellow"],
       ["u", "black"],
+      ["ʊ", "black"],
       ["ɔ", "orange"]
     ]);
 
-    let objWord = new Word(word);
+    let objWord = new Word(fileredWord);
     // console.log(objWord);
     let out: JSX.Element[] = [];
 

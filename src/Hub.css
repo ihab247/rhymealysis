@@ -17,14 +17,20 @@
     margin: 1rem;
 }
 
+.Hub #word {
+    cursor: pointer;
+}
+
 .Hub #word #tooltip {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     visibility: hidden;
-    position: absolute;
+    position: fixed;
     text-align: center;
-    padding: 5px;
+    top: 20px;
+    right: 50px;
+    height: 10px;
     z-index: 1;
-    font-size: large;
+    font-size: 3rem;
     background-color: #141818;
 }
 

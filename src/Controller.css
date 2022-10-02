@@ -8,6 +8,7 @@
 }
 
 .Controller textarea {
+    position: absolute;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: large;
     background-color: #0e1111;
