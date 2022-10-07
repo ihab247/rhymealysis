@@ -8,14 +8,14 @@ function vowelize(word: string): string[] {
   let ret: string[] = [];
   let vowelized: string = "";
   for (const c of word) {
-	if (vowels.includes(c)) {
-	  vowelized += c;
-	} else {
-	  if (vowelized != "") {
-		ret.push(vowelized);
-	  }
-	  vowelized = "";
-	}
+    if (vowels.includes(c)) {
+      vowelized += c;
+    } else {
+      if (vowelized !== "") {
+        ret.push(vowelized);
+      }
+      vowelized = "";
+    }
   }
   return ret;
 }
@@ -26,7 +26,7 @@ for (const i of ipaRaw.split("\n")) {
   let word = d[0];
   let ipa = d[1];
   if (ipa === undefined) {
-	  continue;
+    continue;
   }
   let vol = vowelize(ipa);
   vowelMap.set(word, vol);
@@ -38,7 +38,7 @@ class Word {
 
   constructor(word: string) {
     let v = vowelMap.get(word.toLowerCase());
-    if (v == undefined) {
+    if (v === undefined) {
       this.english = [word];
       return;
     }
@@ -64,7 +64,7 @@ class Word {
       }
     }
     this.english[this.english.length - 1] += out;
-    if (this.english.length != this.vowels.length) {
+    if (this.english.length !== this.vowels.length) {
       // console.log(this);
       this.english = [word];
       // throw Error(`Vowel Mismatch on ${word}`);

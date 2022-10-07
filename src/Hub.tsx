@@ -1,9 +1,9 @@
-import React from 'react';
-import './Hub.css';
-import Word from './Word';
+import React from "react";
+import "./Hub.css";
+import Word from "./Word";
 
 class Hub extends React.Component<{
-  words: string
+  words: string;
 }> {
   props: any = {};
 
@@ -12,8 +12,12 @@ class Hub extends React.Component<{
     this.props = props;
   }
 
-  renderSyllable(s: string, colour: string, back: string | undefined): JSX.Element {
-    return <span style={{"color": colour, backgroundColor: back}}>{s}</span>
+  renderSyllable(
+    s: string,
+    colour: string,
+    back: string | undefined
+  ): JSX.Element {
+    return <span style={{ color: colour, backgroundColor: back }}>{s}</span>;
   }
 
   filter(word: string) {
@@ -28,7 +32,6 @@ class Hub extends React.Component<{
   }
 
   renderWord(word: string): JSX.Element {
-
     let fileredWord = this.filter(word);
 
     let colours = new Map<string, string>([
@@ -46,18 +49,17 @@ class Hub extends React.Component<{
       ["eɪ", "black"],
       ["u", "yellow"],
       ["ɔ", "black"],
-      ["ʊ", "pink"]
+      ["ʊ", "pink"],
     ]);
 
     let back = new Map<string, string>([
       ["eɪ", "yellow"],
       ["u", "black"],
       ["ʊ", "black"],
-      ["ɔ", "orange"]
+      ["ɔ", "orange"],
     ]);
 
     let objWord = new Word(fileredWord);
-    // console.log(objWord);
     let out: JSX.Element[] = [];
 
     for (let i = 0; i < objWord.english.length; i++) {
@@ -66,37 +68,34 @@ class Hub extends React.Component<{
       out.push(this.renderSyllable(objWord.english[i], c, b));
     }
 
-    return <span id="word">
-      {out}
-      <span id="tooltip">{objWord.vowels.join("-")}</span>
-      <span> </span>
-    </span>
+    return (
+      <span id="word">
+        {out}
+        <span id="tooltip">{objWord.vowels.join("-")}</span>
+        <span> </span>
+      </span>
+    );
   }
 
   renderSentence(sentence: string): JSX.Element {
-    return <>
-    <p>
-      {
-        sentence.split(" ").map(
-          (s: string) => this.renderWord(s.trim())
-        )
-      }
-    </p>
-    </>
+    return (
+      <>
+        <p>
+          {sentence.split(" ").map((s: string) => this.renderWord(s.trim()))}
+        </p>
+      </>
+    );
   }
 
   render() {
     return (
       <div className="Hub">
-          {
-            this.props.words.split("\n").map(
-              (v: string) => this.renderSentence(v)
-            )
-          }
+        {this.props.words
+          .split("\n")
+          .map((v: string) => this.renderSentence(v))}
       </div>
-    )
+    );
   }
-  
 }
 
 export default Hub;

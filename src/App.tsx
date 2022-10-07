@@ -2,6 +2,7 @@ import React from "react";
 import "./App.css";
 import Controller from "./Controller";
 import Hub from "./Hub";
+import TabBar from "./TabBar";
 
 class App extends React.Component {
   props: any = {};
@@ -10,7 +11,7 @@ class App extends React.Component {
   constructor(props: object) {
     super(props);
     this.props = props;
-    this.state = { words: "" };
+    this.state = { words: localStorage.getItem("lyrics") || "" };
     this.handleControllerInput = this.handleControllerInput.bind(this);
   }
 
@@ -24,6 +25,7 @@ class App extends React.Component {
   
   handleControllerInput(e: React.FormEvent<HTMLTextAreaElement>) {
     this.setState({words: e.currentTarget.value});
+    localStorage.setItem("lyrics", e.currentTarget.value);
   }
 
   render() {

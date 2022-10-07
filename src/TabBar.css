@@ -1,0 +1,12 @@
+#tab-bar button {
+    height: 1.9rem;
+    background-color: #383b3b;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: aliceblue;
+    font-weight: 500;
+    margin: 2px;
+}
+
+#tab-bar button:hover {
+    background-color: #6e7070;
+}
