@@ -12,7 +12,7 @@
 .Hub p {
     font-size: 3rem;
     font-weight: bold;
-    font-family: futura;
+    font-family: futura, sans-serif;
     color: white;
     margin: 1rem;
 }
